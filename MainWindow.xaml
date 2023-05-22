@@ -26,7 +26,7 @@
 
                 
                 <StackPanel Grid.Column="1" Margin="0,15">
-                    <TextBox TextAlignment="Center"></TextBox>
+                    <TextBox x:Name="TBoxSpeed" TextChanged="TBoxSpeed_TextChanged" TextAlignment="Center"></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
@@ -35,28 +35,28 @@
 
                 <StackPanel Grid.Column="3" Margin="10,15,10,0">
                     <ListBox>
-                        
-                        <ListBoxItem>
+
+                        <ListBoxItem x:Name="LBISpeedT" Selected="LBISpeedT_Selected">
                             <TextBlock>
-                        T (Tera)
+                                T (Tera)
                             </TextBlock>
                         </ListBoxItem>
 
                         <ListBoxItem>
                             <TextBlock>
-                        G (Giga)
+                                G (Giga)
                             </TextBlock>
                         </ListBoxItem>
 
                         <ListBoxItem>
                             <TextBlock>
-                        M (Mega)
+                                M (Mega)
                             </TextBlock>
                         </ListBoxItem>
 
                         <ListBoxItem>
                             <TextBlock>
-                        K (Kilo)
+                                K (Kilo)
                             </TextBlock>
                         </ListBoxItem>
                     </ListBox>
@@ -165,46 +165,54 @@
 
         </StackPanel>
         <StackPanel Margin="0,15,0,0">
-            <Button Content="Calculate" FontWeight="Bold" Width="150"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ButtCalc" Grid.Column="1"  HorizontalAlignment="Left"  Margin="20,0,0,0" Content="Calculate" FontWeight="Bold" Width="150" Click="ButtCalc_Click"/>
+                <Button x:Name="ButtClear" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,20,0" Content="Clear" FontWeight="Bold" Width="150" Click="ButtClear_Click"/>
+            </Grid>
+            
         </StackPanel>
-        <StackPanel>
-            <TextBlock Text="Result" Margin="0,15,0,0" FontWeight="Bold" TextAlignment="Center" Background="Gray" />
-        </StackPanel>
+        
+        <StackPanel x:Name="SPRes" Visibility="Collapsed">
+            <StackPanel>
+                <TextBlock Text="Result" Margin="0,15,0,0" FontWeight="Bold" TextAlignment="Center" Background="Gray" />
+            </StackPanel>
 
-
-        <StackPanel>
-            <StackPanel Margin="10,15,10,0">
-                <TextBlock>
+            <StackPanel>
+                <StackPanel Margin="10,15,10,0">
+                    <TextBlock>
                    Download will Complete in:
-                </TextBlock>
-            </StackPanel>
+                    </TextBlock>
+                </StackPanel>
 
-            <StackPanel Margin="10,5,10,0">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="4*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="25"/>
-                    </Grid.RowDefinitions>
-                    <TextBox Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                    <TextBox Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                <StackPanel Margin="10,5,10,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="4*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
 
-                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="Day(s)" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Text="Hour(s)" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="Minute(s)" VerticalAlignment="Center"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" Text="Second(s)" VerticalAlignment="Center"/>
-                </Grid>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="Day(s)" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Text="Hour(s)" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="Minute(s)" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" Text="Second(s)" VerticalAlignment="Center"/>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
-
-
 
         <StackPanel>
             <StackPanel Margin="10,25,10,0">
@@ -216,22 +224,10 @@
                     
                     <TextBlock Text="DEBUG:" Grid.Column="0"/>
 
-                    <TextBox Grid.Column="1"/>
+                    <TextBox x:Name="TBoxDeb" Grid.Column="1" VerticalContentAlignment="Center" Height="25"/>
              
                    </Grid> 
-            </StackPanel>
-            
-                    
-            
-            
-             
-         </StackPanel>
-
-        
-        
-        
+            </StackPanel>    
+         </StackPanel>  
     </StackPanel>
-    
-    
-   
 </Window>

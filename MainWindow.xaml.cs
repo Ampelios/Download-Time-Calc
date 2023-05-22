@@ -26,5 +26,28 @@ namespace Download_Time_Calc
         }
 
 
+
+        private void ButtCalc_Click(object sender, RoutedEventArgs e)
+        {
+            SPRes.Visibility = Visibility.Visible;
+            
+        }
+
+        private void TBoxSpeed_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TBoxDeb.Text = TBoxSpeed.Text;
+        }
+
+
+
+        private void LBISpeedT_Selected(object sender, RoutedEventArgs e)
+        {
+            TBoxDeb.Text = "tera selected";
+        }
+
+        private void ButtClear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
