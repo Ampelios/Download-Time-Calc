@@ -5,8 +5,233 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Download_Time_Calc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="525" FontSize="15" >
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Text="Internet Speed" FontWeight="Bold" TextAlignment="Center" Background="Gray"/>
+        </StackPanel>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,15,0,0">
+                    <TextBlock TextAlignment="Center">Speed:</TextBlock>
+                </StackPanel>
+
+                
+                <StackPanel Grid.Column="1" Margin="0,15">
+                    <TextBox TextAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="0,15,0,0">
+                    <TextBlock TextAlignment="Center">in</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Margin="10,15,10,0">
+                    <ListBox>
+                        
+                        <ListBoxItem>
+                            <TextBlock>
+                        T (Tera)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        G (Giga)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        M (Mega)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        K (Kilo)
+                            </TextBlock>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Margin="10,15,10,0">
+                    
+                    <ListBox>
+                        <ListBoxItem>
+                            <TextBlock>
+                        Bit/s (b/s)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        Byte/s (B/s)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                    </ListBox>
+
+                </StackPanel>
+
+            </Grid>
+            
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="File Size" Margin="0,15,0,0" FontWeight="Bold" TextAlignment="Center" Background="Gray" />
+        </StackPanel>
+
+
+            <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Row="1" Margin="0,15,0,0">
+                    <TextBlock TextAlignment="Center">Size:</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,15">
+                    <TextBox TextAlignment="Center"></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="0,15,0,0">
+                    <TextBlock TextAlignment="Center">in</TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Margin="10,15,10,0">
+                    <ListBox>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        T (Tera)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        G (Giga)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        M (Mega)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        K (Kilo)
+                            </TextBlock>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </StackPanel>
+
+                <StackPanel Grid.Column="4" Margin="10,15,10,0">
+
+                    <ListBox>
+                        <ListBoxItem>
+                            <TextBlock>
+                        Bit (b)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                        <ListBoxItem>
+                            <TextBlock>
+                        Byte (B)
+                            </TextBlock>
+                        </ListBoxItem>
+
+                    </ListBox>
+
+                </StackPanel>
+
+            </Grid>
+
+        </StackPanel>
+        <StackPanel Margin="0,15,0,0">
+            <Button Content="Calculate" FontWeight="Bold" Width="150"/>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Text="Result" Margin="0,15,0,0" FontWeight="Bold" TextAlignment="Center" Background="Gray" />
+        </StackPanel>
+
+
+        <StackPanel>
+            <StackPanel Margin="10,15,10,0">
+                <TextBlock>
+                   Download will Complete in:
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Margin="10,5,10,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <TextBox Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="Day(s)" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Text="Hour(s)" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="Minute(s)" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" Text="Second(s)" VerticalAlignment="Center"/>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+
+
+        <StackPanel>
+            <StackPanel Margin="10,25,10,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="8*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Text="DEBUG:" Grid.Column="0"/>
+
+                    <TextBox Grid.Column="1"/>
+             
+                   </Grid> 
+            </StackPanel>
+            
+                    
+            
+            
+             
+         </StackPanel>
+
         
-    </Grid>
+        
+        
+    </StackPanel>
+    
+    
+   
 </Window>

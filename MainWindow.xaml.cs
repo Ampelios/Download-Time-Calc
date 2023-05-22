@@ -24,5 +24,7 @@ namespace Download_Time_Calc
         {
             InitializeComponent();
         }
+
+
     }
 }
