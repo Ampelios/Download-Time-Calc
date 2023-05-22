@@ -105,7 +105,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="0,15">
-                    <TextBox TextAlignment="Center"></TextBox>
+                    <TextBox x:Name="TBoxSize" TextAlignment="Center"></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
@@ -165,18 +165,12 @@
 
         </StackPanel>
         <StackPanel Margin="0,15,0,0">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <Button x:Name="ButtCalc" Grid.Column="1"  HorizontalAlignment="Left"  Margin="20,0,0,0" Content="Calculate" FontWeight="Bold" Width="150" Click="ButtCalc_Click"/>
-                <Button x:Name="ButtClear" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,20,0" Content="Clear" FontWeight="Bold" Width="150" Click="ButtClear_Click"/>
-            </Grid>
+            
+                <Button x:Name="ButtClear" Grid.Column="0" Margin="0,0,20,0" Content="Clear" FontWeight="Bold" Width="150" Click="ButtClear_Click"/>
             
         </StackPanel>
         
-        <StackPanel x:Name="SPRes" Visibility="Collapsed">
+        <StackPanel x:Name="SPRes" >
             <StackPanel>
                 <TextBlock Text="Result" Margin="0,15,0,0" FontWeight="Bold" TextAlignment="Center" Background="Gray" />
             </StackPanel>

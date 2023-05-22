@@ -25,14 +25,6 @@ namespace Download_Time_Calc
             InitializeComponent();
         }
 
-
-
-        private void ButtCalc_Click(object sender, RoutedEventArgs e)
-        {
-            SPRes.Visibility = Visibility.Visible;
-            
-        }
-
         private void TBoxSpeed_TextChanged(object sender, TextChangedEventArgs e)
         {
             TBoxDeb.Text = TBoxSpeed.Text;
