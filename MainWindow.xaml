@@ -34,9 +34,9 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="3" Margin="10,15,10,0">
-                    <ListBox>
+                    <ListBox x:Name="LBSpeed" SelectionChanged="LBSpeed_SelectionChanged">
 
-                        <ListBoxItem x:Name="LBISpeedT" Selected="LBISpeedT_Selected">
+                        <ListBoxItem>
                             <TextBlock>
                                 T (Tera)
                             </TextBlock>
@@ -59,15 +59,15 @@
                                 K (Kilo)
                             </TextBlock>
                         </ListBoxItem>
+                        
                     </ListBox>
-
                 </StackPanel>
 
                 <StackPanel Grid.Column="4" Margin="10,15,10,0">
                     
-                    <ListBox>
+                    <ListBox x:Name="LBSpeedUnit" SelectionChanged="LBSpeed_SelectionChanged">
                         <ListBoxItem>
-                            <TextBlock>
+                            <TextBlock >
                         Bit/s (b/s)
                             </TextBlock>
                         </ListBoxItem>
@@ -105,7 +105,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="0,15">
-                    <TextBox x:Name="TBoxSize" TextAlignment="Center"></TextBox>
+                    <TextBox x:Name="TBoxSize" TextChanged="TBoxSize_TextChanged" TextAlignment="Center"></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
@@ -113,7 +113,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="3" Margin="10,15,10,0">
-                    <ListBox>
+                    <ListBox x:Name="LBSize" SelectionChanged="LBSize_SelectionChanged">
 
                         <ListBoxItem>
                             <TextBlock>
@@ -144,7 +144,7 @@
 
                 <StackPanel Grid.Column="4" Margin="10,15,10,0">
 
-                    <ListBox>
+                    <ListBox x:Name="LBSizeUnit" SelectionChanged="LBSize_SelectionChanged">
                         <ListBoxItem>
                             <TextBlock>
                         Bit (b)
@@ -194,10 +194,10 @@
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
-                        <TextBox Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center"/>
+                        <TextBox x:Name="TBxDay" Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                        <TextBox x:Name="TBxHr" Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                        <TextBox x:Name="TBxMin" Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                        <TextBox x:Name="TBxSec" Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
 
                         <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="Day(s)" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Text="Hour(s)" VerticalAlignment="Center"/>

@@ -25,21 +25,128 @@ namespace Download_Time_Calc
             InitializeComponent();
         }
 
-        private void TBoxSpeed_TextChanged(object sender, TextChangedEventArgs e)
+        private void LBSpeed_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TBoxDeb.Text = TBoxSpeed.Text;
+            int speed = LBSpeed.SelectedIndex;
+            int speedU = LBSpeedUnit.SelectedIndex;
+            String strout = "";
+            TBoxDeb.Text = "";
+
+            switch (speed)
+            {
+                case 0:
+                    {
+                        //TBoxDeb.Text = "Tera ";
+                        strout = "Speed Tera ";
+                        break;
+                    }
+                case 1:
+                    {
+                        //TBoxDeb.Text = "Giga ";
+                        strout = "Speed Giga ";
+                        break;
+                    }
+                case 2:
+                    {
+                        //TBoxDeb.Text = "Mega ";
+                        strout = "Speed Mega ";
+                        break;
+                    }
+                case 3:
+                    {
+                        //TBoxDeb.Text = "Kilo ";
+                        strout = "Speed Kilo ";
+                        break;
+                    }
+            }
+
+            switch (speedU)
+            {
+                case 0:
+                    {
+                        strout = strout + "Bit";
+                        break;
+                    }
+                case 1:
+                    {
+                        strout = strout + "Byte";
+                        break;
+                    }
+                
+            }
+            TBoxDeb.Text = strout;
+
+
         }
 
-
-
-        private void LBISpeedT_Selected(object sender, RoutedEventArgs e)
+        private void LBSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            TBoxDeb.Text = "tera selected";
+            int size = LBSize.SelectedIndex;
+            int sizeU = LBSizeUnit.SelectedIndex;
+            String strout = "";
+            TBoxDeb.Text = "";
+
+            switch (size)
+            {
+                case 0:
+                    {
+                        //TBoxDeb.Text = "Tera ";
+                        strout = "Size Tera ";
+                        break;
+                    }
+                case 1:
+                    {
+                        //TBoxDeb.Text = "Giga ";
+                        strout = "Size Giga ";
+                        break;
+                    }
+                case 2:
+                    {
+                        //TBoxDeb.Text = "Mega ";
+                        strout = "Size Mega ";
+                        break;
+                    }
+                case 3:
+                    {
+                        //TBoxDeb.Text = "Kilo ";
+                        strout = "Size Kilo ";
+                        break;
+                    }
+            }
+
+            switch (sizeU)
+            {
+                case 0:
+                    {
+                        strout = strout + "Bit ";
+                        break;
+                    }
+                case 1:
+                    {
+                        strout = strout + "Byte ";
+                        break;
+                    }
+
+            }
+            TBoxDeb.Text = strout;
+
+
         }
 
         private void ButtClear_Click(object sender, RoutedEventArgs e)
         {
 
+            TBoxSpeed.Text = "";
+            TBoxSize.Text = "";
+            TBoxDeb.Text = "";
+            LBSpeed.UnselectAll();
+            LBSpeedUnit.UnselectAll();
+            LBSize.UnselectAll();
+            LBSizeUnit.UnselectAll();
+            TBxDay.Text = "";
+            TBxHr.Text = "";
+            TBxMin.Text = "";
+            TBxSec.Text = "";
         }
     }
 }
