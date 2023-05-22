@@ -26,7 +26,7 @@
 
                 
                 <StackPanel Grid.Column="1" Margin="0,15">
-                    <TextBox x:Name="TBoxSpeed" TextChanged="TBoxSpeed_TextChanged" TextAlignment="Center"></TextBox>
+                    <TextBox x:Name="TBoxSpeed" TextChanged="RunCalc" TextAlignment="Center" PreviewTextInput="NumbOnly"></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
@@ -105,7 +105,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="0,15">
-                    <TextBox x:Name="TBoxSize" TextChanged="TBoxSize_TextChanged" TextAlignment="Center"></TextBox>
+                    <TextBox x:Name="TBoxSize" TextChanged="RunCalc" TextAlignment="Center" PreviewTextInput="NumbOnly"></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
@@ -218,7 +218,7 @@
                     
                     <TextBlock Text="DEBUG:" Grid.Column="0"/>
 
-                    <TextBox x:Name="TBoxDeb" Grid.Column="1" VerticalContentAlignment="Center" Height="25"/>
+                    <TextBox x:Name="TBoxDeb" Grid.Column="1" VerticalAlignment="Center" Height="25"/>
              
                    </Grid> 
             </StackPanel>    
