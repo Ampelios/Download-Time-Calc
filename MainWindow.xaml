@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="525" FontSize="15" Icon="/Resources/download.png"
         ResizeMode="CanMinimize">
-    <StackPanel>
+    <StackPanel Background="LightGray">
         <StackPanel>
             <TextBlock Text="Internet Speed" FontWeight="Bold" TextAlignment="Center" Background="Gray"/>
         </StackPanel>
