@@ -181,9 +181,13 @@ namespace Download_Time_Calc
             }
             else
             {
-                TBoxDeb.Text = "";
-            }
-            
+                TBoxDeb.Clear();
+                TBxDay.Clear();
+                TBxHr.Clear();
+                TBxMin.Clear();
+                TBxSec.Clear();
+                TBxmSec.Clear();
+            }            
         }
     }
 }
