@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("Download Time Calc")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Ampelios")]
 [assembly: AssemblyProduct("Download Time Calc")]
 [assembly: AssemblyCopyright("Copyright Ampelios ©  2023")]
 [assembly: AssemblyTrademark("")]
