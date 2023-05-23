@@ -23,11 +23,7 @@ namespace Download_Time_Calc
     
     public partial class MainWindow : Window
     {
-        double SpdMulti = 0;
-        String SpdUnit= "";
-        double SizeMulti = 0;
-        String SizeUnit = "";
-        double calc = 0;
+        double SpdMulti, SpdUnit, SizeMulti, SizeUnit;
 
         public MainWindow()
         {
@@ -67,19 +63,22 @@ namespace Download_Time_Calc
             {
                 case 0:
                     {
-                        SpdUnit = " Bit";
+                        SpdUnit = SpdMulti ;
                         break;
                     }
                 case 1:
                     {
-                        SpdUnit = " Byte";
+                        SpdUnit = SpdMulti * 8;
                         break;
                     }
-                
+                default:
+                    {
+                        SpdUnit = 0;
+                        break;
+                    }
             }
+
             kira();
-
-
         }
 
         private void LBSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -115,22 +114,26 @@ namespace Download_Time_Calc
             {
                 case 0:
                     {
-                        SizeUnit = " Bit";
+                        SizeUnit = SizeMulti ;
                         break;
                     }
                 case 1:
                     {
-                        SizeUnit = " Byte";
+                        SizeUnit = SizeMulti * 8;
                         break;
                     }
-
+                default:
+                    {
+                        SizeUnit = 0;
+                        break;
+                    }
             }
+
             kira();
         }
 
         private void ButtClear_Click(object sender, RoutedEventArgs e)
         {
-
             TBoxSpeed.Clear();
             TBoxSize.Clear();
             TBoxDeb.Clear();
@@ -144,10 +147,6 @@ namespace Download_Time_Calc
             TBxSec.Clear();
         }
 
-        void runboi()
-        {
-
-        }
         private void RunCalc (object sender, TextChangedEventArgs e)
         { 
             kira();   
@@ -161,17 +160,30 @@ namespace Download_Time_Calc
 
         void kira()
         {
-            if (TBoxSpeed.Text != "" && TBoxSize.Text != "" && SpdMulti != 0 && SizeMulti != 0)
+            if (TBoxSpeed.Text != "" && TBoxSize.Text != "" && SpdUnit != 0 && SizeUnit != 0)
             {
-                calc = (double.Parse(TBoxSize.Text) * SizeMulti) / (double.Parse(TBoxSpeed.Text) * SpdMulti);
-                TBoxDeb.Text = calc.ToString();
+                double calc = (double.Parse(TBoxSize.Text) * SizeUnit) / (double.Parse(TBoxSpeed.Text) * SpdUnit);
+                if(Double.IsNaN(calc) || Double.IsInfinity(calc))
+                {
+                    //TBoxDeb.Text = "Error";
+                }
+                else
+                {
+                    string value = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff");
+                    string[] Result = value.Split(':');
+                    //TBoxDeb.Text = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff") + "  " + calc.ToString() + SpdUnit;
+                    TBxDay.Text = Result[0];
+                    TBxHr.Text = Result[1];
+                    TBxMin.Text = Result[2];
+                    TBxSec.Text = Result[3];
+                    TBxmSec.Text = Result[4];
+                }                
             }
             else
             {
-                TBoxDeb.Clear();
+                TBoxDeb.Text = "";
             }
             
         }
     }
-
 }

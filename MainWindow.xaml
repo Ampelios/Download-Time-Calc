@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Download_Time_Calc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="525" FontSize="15" >
+        Title="MainWindow" Height="650" Width="525" FontSize="15" >
     <StackPanel>
         <StackPanel>
             <TextBlock Text="Internet Speed" FontWeight="Bold" TextAlignment="Center" Background="Gray"/>
@@ -193,16 +193,19 @@
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="25"/>
                             <RowDefinition Height="25"/>
+                            <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
                         <TextBox x:Name="TBxDay" Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
                         <TextBox x:Name="TBxHr" Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
                         <TextBox x:Name="TBxMin" Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
                         <TextBox x:Name="TBxSec" Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                        <TextBox x:Name="TBxmSec" Grid.Row="4" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
 
                         <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="Day(s)" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Text="Hour(s)" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="Minute(s)" VerticalAlignment="Center"/>
                         <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" Text="Second(s)" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Margin="10,0,0,0" Text="Milisecond(s)" VerticalAlignment="Center"/>
                     </Grid>
                 </StackPanel>
             </StackPanel>
