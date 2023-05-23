@@ -168,7 +168,7 @@ namespace Download_Time_Calc
             }
             else
             {
-                TBoxDeb.Text = "";
+                TBoxDeb.Clear();
             }
             
         }
