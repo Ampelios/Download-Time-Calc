@@ -165,25 +165,29 @@ namespace Download_Time_Calc
             if (TBoxSpeed.Text != "" && TBoxSize.Text != "" && SpdUnit != 0 && SizeUnit != 0)
             {
                 double calc = (float.Parse(TBoxSize.Text) * SizeUnit) / (float.Parse(TBoxSpeed.Text) * SpdUnit);
-                if(Double.IsNaN(calc) || Double.IsInfinity(calc))
+                if(!Double.IsNaN(calc) && !Double.IsInfinity(calc) && calc!=0)
                 {
-
-                }
-                else
-                {
-                    string value = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff");
-                    string[] Result = value.Split(':');
+                    string[] Result = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff").Split(':');
                     //TBoxDeb.Text = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff") + "  " + calc.ToString() + SpdUnit;
                     TBxDay.Text = Result[0];
                     TBxHr.Text = Result[1];
                     TBxMin.Text = Result[2];
                     TBxSec.Text = Result[3];
                     TBxmSec.Text = Result[4];
-                }                
+                }
+                else
+                {
+                    TBxDay.Clear();
+                    TBxHr.Clear();
+                    TBxMin.Clear();
+                    TBxSec.Clear();
+                    TBxmSec.Clear();
+                }
+                
             }
             else
             {
-                TBoxDeb.Clear();
+                //TBoxDeb.Clear();
                 TBxDay.Clear();
                 TBxHr.Clear();
                 TBxMin.Clear();
