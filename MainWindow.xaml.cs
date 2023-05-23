@@ -174,6 +174,7 @@ namespace Download_Time_Calc
                     TBxMin.Text = Result[2];
                     TBxSec.Text = Result[3];
                     TBxmSec.Text = Result[4];
+                    TBoxDeb.Text = DateTime.Now.AddSeconds(calc).ToString();
                 }
                 else
                 {
