@@ -24,6 +24,7 @@ namespace Download_Time_Calc
     public partial class MainWindow : Window
     {
         double SpdUnit, SizeUnit;
+        
 
         public MainWindow()
         {
