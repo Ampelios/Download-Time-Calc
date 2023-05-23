@@ -23,7 +23,7 @@ namespace Download_Time_Calc
     
     public partial class MainWindow : Window
     {
-        double SpdMulti, SpdUnit, SizeMulti, SizeUnit;
+        double SpdUnit, SizeUnit;
 
         public MainWindow()
         {
@@ -34,6 +34,7 @@ namespace Download_Time_Calc
         {
             int speedIndex = LBSpeed.SelectedIndex;
             int speedUIndex = LBSpeedUnit.SelectedIndex;
+            double SpdMulti = 0;
 
             switch (speedIndex)
             {
@@ -63,7 +64,7 @@ namespace Download_Time_Calc
             {
                 case 0:
                     {
-                        SpdUnit = SpdMulti ;
+                        SpdUnit = SpdMulti;
                         break;
                     }
                 case 1:
@@ -85,7 +86,7 @@ namespace Download_Time_Calc
         {
             int sizeIndex = LBSize.SelectedIndex;
             int sizeUIndex = LBSizeUnit.SelectedIndex;
-
+            double SizeMulti = 0;
             switch (sizeIndex)
             {
                 case 0:
@@ -154,7 +155,7 @@ namespace Download_Time_Calc
 
         private void NumbOnly (object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            Regex regex = new Regex("[^0-9][.]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
@@ -162,10 +163,10 @@ namespace Download_Time_Calc
         {
             if (TBoxSpeed.Text != "" && TBoxSize.Text != "" && SpdUnit != 0 && SizeUnit != 0)
             {
-                double calc = (double.Parse(TBoxSize.Text) * SizeUnit) / (double.Parse(TBoxSpeed.Text) * SpdUnit);
+                double calc = (float.Parse(TBoxSize.Text) * SizeUnit) / (float.Parse(TBoxSpeed.Text) * SpdUnit);
                 if(Double.IsNaN(calc) || Double.IsInfinity(calc))
                 {
-                    //TBoxDeb.Text = "Error";
+
                 }
                 else
                 {

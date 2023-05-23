@@ -211,7 +211,7 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel>
+        <StackPanel Visibility="Collapsed">
             <StackPanel Margin="10,25,10,0">
                 <Grid>
                     <Grid.ColumnDefinitions>
