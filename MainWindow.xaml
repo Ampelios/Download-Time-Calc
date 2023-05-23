@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Download_Time_Calc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="525" FontSize="15" >
+        Title="MainWindow" Height="650" Width="525" FontSize="15" Icon="/Resources/download.png">
     <StackPanel>
         <StackPanel>
             <TextBlock Text="Internet Speed" FontWeight="Bold" TextAlignment="Center" Background="Gray"/>
