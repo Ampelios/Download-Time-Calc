@@ -36,7 +36,11 @@
 
             <Grid Background="LightGray" MouseDown="DockPanel_MouseDown">
 
-                <Menu Margin="3,0,0,0" Background="LightGray" DockPanel.Dock="Top" HorizontalAlignment="Left" Height="20">
+                <Menu Margin="3,0,0,0" 
+                      Background="LightGray" 
+                      DockPanel.Dock="Top" 
+                      HorizontalAlignment="Left" 
+                      Height="20">
 
                     <MenuItem Header="_File">
 
@@ -89,10 +93,11 @@
         </DockPanel>        
         
         <StackPanel>
-            <TextBlock Text="Internet Speed" 
-                       FontWeight="Bold" 
-                       TextAlignment="Center" 
-                       Background="Gray"/>
+            <Label Content="Internet Speed" 
+                   FontWeight="Bold"
+                   HorizontalContentAlignment="Center"
+                   Background="Gray"
+                   Padding="0"/>
         </StackPanel>
         
         <StackPanel>
@@ -106,52 +111,48 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Margin="0,15,0,0">
-                    <TextBlock TextAlignment="Center">Speed:</TextBlock>
+                    <Label HorizontalContentAlignment="Center"
+                           Content="Speed:"
+                           Padding="0"/>
                 </StackPanel>
                 
                 <StackPanel Grid.Column="1" Margin="0,15">
                     <TextBox x:Name="TBoxSpeed" 
                              TextChanged="RunCalc" 
                              TextAlignment="Center" 
-                             PreviewTextInput="NumbOnly"></TextBox>
+                             PreviewTextInput="NumbOnly"
+                             BorderThickness="1"
+                             Background="{StaticResource cs_BackgroundLayer}"
+                             BorderBrush="{StaticResource cs_BorderBrush}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
-                    <TextBlock TextAlignment="Center">in</TextBlock>
+                    <Label Padding="0" HorizontalContentAlignment="Center" Content="in"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="3" Margin="10,15,10,0">
 
-                    <ListBox x:Name="LBSpeed"
+                    <ListBox ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle1}" x:Name="LBSpeed"
                             SelectionChanged="LBSpeed_SelectionChanged"
                             Background="{StaticResource cs_BackgroundLayer}"
                             BorderBrush="{StaticResource cs_BorderBrush}"
                             BorderThickness="2"
-                            
                             >
 
                         <ListBoxItem>
-                            <TextBlock>
-                                T (Tera)
-                            </TextBlock>
+                            <Label Content="T (Tera)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                                G (Giga)
-                            </TextBlock>
+                            <Label Content="G (Giga)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                                M (Mega)
-                            </TextBlock>
+                            <Label Content="M (Mega)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                                K (Kilo)
-                            </TextBlock>
+                            <Label Content="K (Kilo)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
                         
                     </ListBox>
@@ -160,23 +161,20 @@
 
                 <StackPanel Grid.Column="4" Margin="10,15,10,0">
 
-                    <ListBox x:Name="LBSpeedUnit" 
+                    <ListBox x:Name="LBSpeedUnit"
+                             ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle1}"
                              SelectionChanged="LBSpeed_SelectionChanged" 
                              Background="{StaticResource cs_BackgroundLayer}"
                              BorderBrush="{StaticResource cs_BorderBrush}"
                              BorderThickness="2"
                              >
-                        
+
                         <ListBoxItem>
-                            <TextBlock >
-                        Bit/s (b/s)
-                            </TextBlock>
+                            <Label Content="Bit/s (b/s)" Style="{StaticResource lbl_item}" />
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                        Byte/s (B/s)
-                            </TextBlock>
+                            <Label Content="Byte/s (B/s)" Style="{StaticResource lbl_item}" />
                         </ListBoxItem>
 
                     </ListBox>
@@ -187,12 +185,13 @@
         </StackPanel>
         
         <StackPanel>
-            <TextBlock Text="File Size" 
-                       Margin="0,15,0,0" 
-                       FontWeight="Bold" 
-                       TextAlignment="Center" 
-                       Background="Gray" 
-                       />
+            <Label Content="File Size"                   
+                   Margin="0,15,0,0"
+                   FontWeight="Bold" 
+                   HorizontalContentAlignment="Center" 
+                   Background="Gray"
+                   Padding="0"
+                   />
         </StackPanel>
 
         <StackPanel>
@@ -206,23 +205,30 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Grid.Row="1" Margin="0,15,0,0">
-                    <TextBlock TextAlignment="Center">Size:</TextBlock>
+                    <Label HorizontalContentAlignment="Center" 
+                           Content="Size:" 
+                           Padding="0"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="0,15">
                     <TextBox x:Name="TBoxSize" 
                              TextChanged="RunCalc" 
                              TextAlignment="Center" 
-                             PreviewTextInput="NumbOnly"
-                             />
+                             PreviewTextInput="NumbOnly"                             
+                             Background="{StaticResource cs_BackgroundLayer}"
+                             BorderBrush="{StaticResource cs_BorderBrush}"/>
+
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" Margin="0,15,0,0">
-                    <TextBlock TextAlignment="Center">in</TextBlock>
+                    <Label HorizontalContentAlignment="Center" 
+                           Content="in" 
+                           Padding="0"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="3" Margin="10,15,10,0">
-                    <ListBox x:Name="LBSize" 
+                    <ListBox x:Name="LBSize"
+                             ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle1}"
                              SelectionChanged="LBSize_SelectionChanged" 
                              Background="{StaticResource cs_BackgroundLayer}"
                              BorderBrush="{StaticResource cs_BorderBrush}"
@@ -230,85 +236,63 @@
                              >
 
                         <ListBoxItem>
-                            <TextBlock>
-                        T (Tera)
-                            </TextBlock>
+                            <Label Content="T (Tera)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                        G (Giga)
-                            </TextBlock>
+                            <Label Content="G (Giga)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                        M (Mega)
-                            </TextBlock>
+                            <Label Content="M (Mega)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                        K (Kilo)
-                            </TextBlock>
+                            <Label Content="K (Kilo)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
-                        
+                                                
                     </ListBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="4" Margin="10,15,10,0">
-                    <ListBox x:Name="LBSizeUnit" 
+                    <ListBox x:Name="LBSizeUnit"
+                             ItemContainerStyle="{DynamicResource ListBoxItemContainerStyle1}"
                              SelectionChanged="LBSize_SelectionChanged" 
                              Background="{StaticResource cs_BackgroundLayer}"
                              BorderBrush="{StaticResource cs_BorderBrush}"
                              BorderThickness="2"
                              >
-                        
+
                         <ListBoxItem>
-                            <TextBlock>
-                        Bit (b)
-                            </TextBlock>
+                            <Label Content="Bit/s (b/s)" Style="{StaticResource lbl_item}"/>
                         </ListBoxItem>
 
                         <ListBoxItem>
-                            <TextBlock>
-                        Byte (B)
-                            </TextBlock>
+                            <Label Content="Byte/s (B/s)" Style="{StaticResource lbl_item}" />
                         </ListBoxItem>
-                        
+
                     </ListBox>
                 </StackPanel>
 
             </Grid>
         </StackPanel>
-        
-        <StackPanel Margin="0,15,0,0">            
-                <Button x:Name="ButtClear" 
-                        Margin="0,0,20,0" 
-                        Content="Clear"
-                        FontWeight="Bold" 
-                        Width="150" 
-                        Click="ButtClear_Click"
-                        />            
-        </StackPanel>
-        
+                
         <StackPanel x:Name="SPRes" >
             
             <StackPanel>
-                <TextBlock Text="Result" 
-                           Margin="0,15,0,0" 
-                           FontWeight="Bold" 
-                           TextAlignment="Center" 
-                           Background="Gray" 
+                <Label Content="Result" 
+                       Margin="0,15,0,0" 
+                       FontWeight="Bold" 
+                       HorizontalContentAlignment="Center" 
+                       Background="Gray"
+                       Padding="0"
                            />
             </StackPanel>
 
             <StackPanel>
                 
                 <StackPanel Margin="10,15,10,0">
-                    <TextBlock>
-                   Download will Complete in:
-                    </TextBlock>
+                    <Label Padding="0" Content="Download will Complete in:"/>
                 </StackPanel>
 
                 <StackPanel Margin="10,5,10,0">
@@ -316,6 +300,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
@@ -325,17 +310,18 @@
                             <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
                         
-                        <TextBox x:Name="TBxDay" Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
-                        <TextBox x:Name="TBxHr" Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
-                        <TextBox x:Name="TBxMin" Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
-                        <TextBox x:Name="TBxSec" Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
-                        <TextBox x:Name="TBxmSec" Grid.Row="4" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+                        <TextBox x:Name="TBxDay" Grid.Row="0" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="1" Background="{StaticResource cs_BackgroundLayer}" BorderBrush="{StaticResource cs_BorderBrush}"/>
+                        <TextBox x:Name="TBxHr" Grid.Row="1" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="1" Background="{StaticResource cs_BackgroundLayer}" BorderBrush="{StaticResource cs_BorderBrush}"/>
+                        <TextBox x:Name="TBxMin" Grid.Row="2" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="1" Background="{StaticResource cs_BackgroundLayer}" BorderBrush="{StaticResource cs_BorderBrush}"/>
+                        <TextBox x:Name="TBxSec" Grid.Row="3" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="1" Background="{StaticResource cs_BackgroundLayer}" BorderBrush="{StaticResource cs_BorderBrush}"/>
+                        <TextBox x:Name="TBxmSec" Grid.Row="4" Grid.Column="0" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" BorderThickness="1" Background="{StaticResource cs_BackgroundLayer}" BorderBrush="{StaticResource cs_BorderBrush}"/>
 
-                        <TextBlock Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Text="Day(s)" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Text="Hour(s)" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Text="Minute(s)" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" Text="Second(s)" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="4" Grid.Column="1" Margin="10,0,0,0" Text="Milisecond(s)" VerticalAlignment="Center"/>
+                        <Label Padding="0" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0" Content="Day(s)" VerticalAlignment="Center"/>
+                        <Label Padding="0" Grid.Row="1" Grid.Column="1" Margin="10,0,0,0" Content="Hour(s)" VerticalAlignment="Center"/>
+                        <Label Padding="0" Grid.Row="2" Grid.Column="1" Margin="10,0,0,0" Content="Minute(s)" VerticalAlignment="Center"/>
+                        <Label Padding="0" Grid.Row="3" Grid.Column="1" Margin="10,0,0,0" Content="Second(s)" VerticalAlignment="Center"/>
+                        <Label Padding="0" Grid.Row="4" Grid.Column="1" Margin="10,0,0,0" Content="Milisecond(s)" VerticalAlignment="Center"/>
+                        <Button Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Click="ButtClear_Click" Style="{StaticResource bt_clear}"/>
                     </Grid>
                 </StackPanel>
                 
@@ -343,7 +329,7 @@
             
         </StackPanel>
 
-        <StackPanel x:Name="SPDebug" Visibility="Collapsed">
+        <StackPanel x:Name="SPDebug" Visibility="Hidden">
             <StackPanel Margin="10,25,10,0">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -351,10 +337,16 @@
                         <ColumnDefinition Width="8*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <TextBlock Text="DEBUG:" Grid.Column="0"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Text="DEBUG:" Grid.Column="0" Grid.Row="0" Width="53"/>
 
-                    <TextBox x:Name="TBoxDeb" Grid.Column="1" VerticalAlignment="Center" Height="25"/>
-             
+                    <TextBox x:Name="TBoxDeb" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Height="25"/>
+                    <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Update"
+                            Click="RFButton_Click" Margin="0,5,0,0"/>
                 </Grid> 
             </StackPanel>    
          </StackPanel>  

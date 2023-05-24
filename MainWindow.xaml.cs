@@ -173,13 +173,13 @@ namespace Download_Time_Calc
 
         private void MFExit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void btMinimize_Click(object sender, RoutedEventArgs e)
         {
             
-            MessageBox.Show("test");
+            this.WindowState = WindowState.Minimized;
         }
 
         private void DockPanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -187,10 +187,15 @@ namespace Download_Time_Calc
             if(e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
-                MessageBox.Show("test");
             }
             
         }
+
+        private void RFButton_Click(object sender, RoutedEventArgs e)
+        {
+            kira();
+        }
+
 
         void kira()
         {
@@ -206,7 +211,7 @@ namespace Download_Time_Calc
                     TBxMin.Text = Result[2];
                     TBxSec.Text = Result[3];
                     TBxmSec.Text = Result[4];
-                    TBoxDeb.Text = DateTime.Now.AddSeconds(calc).ToString("t");
+                    TBoxDeb.Text = DateTime.Now.AddSeconds(calc).ToString("G");
                 }
                 else
                 {
