@@ -89,6 +89,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\ColorStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\LBStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -117,10 +129,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\download.png" />
+    <Resource Include="Resources\Icons\download.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icon.ico" />
+    <Resource Include="Resources\Icons\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
@@ -136,6 +148,29 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\debug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\close-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\minimize-inv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\close-button-inv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\cross.png" />
+    <Resource Include="Resources\Icons\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Close-inv.png" />
+    <Resource Include="Resources\Icons\Close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

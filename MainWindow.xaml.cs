@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -156,13 +157,44 @@ namespace Download_Time_Calc
 
         private void NumbOnly (object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9][.]+");
+            Regex regex = new Regex("[^0-9,.]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void MIDebug_Checked(object sender, RoutedEventArgs e)
+        {
+            SPDebug.Visibility = Visibility.Visible;
+        }
+
+        private void MIDebug_Unchecked(object sender, RoutedEventArgs e)
+        {
+            SPDebug.Visibility = Visibility.Collapsed;
+        }
+
+        private void MFExit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            
+            MessageBox.Show("test");
+        }
+
+        private void DockPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+                MessageBox.Show("test");
+            }
+            
         }
 
         void kira()
         {
-            if (TBoxSpeed.Text != "" && TBoxSize.Text != "" && SpdUnit != 0 && SizeUnit != 0)
+            if (TBoxSpeed.Text != "" && TBoxSize.Text != "" && TBoxSpeed.Text != "." && TBoxSize.Text != "." && SpdUnit != 0 && SizeUnit != 0)
             {
                 double calc = (float.Parse(TBoxSize.Text) * SizeUnit) / (float.Parse(TBoxSpeed.Text) * SpdUnit);
                 if(!Double.IsNaN(calc) && !Double.IsInfinity(calc) && calc!=0)
@@ -174,10 +206,11 @@ namespace Download_Time_Calc
                     TBxMin.Text = Result[2];
                     TBxSec.Text = Result[3];
                     TBxmSec.Text = Result[4];
-                    TBoxDeb.Text = DateTime.Now.AddSeconds(calc).ToString();
+                    TBoxDeb.Text = DateTime.Now.AddSeconds(calc).ToString("t");
                 }
                 else
                 {
+                    TBoxDeb.Clear();
                     TBxDay.Clear();
                     TBxHr.Clear();
                     TBxMin.Clear();
@@ -188,7 +221,7 @@ namespace Download_Time_Calc
             }
             else
             {
-                //TBoxDeb.Clear();
+                TBoxDeb.Clear();
                 TBxDay.Clear();
                 TBxHr.Clear();
                 TBxMin.Clear();
@@ -198,3 +231,8 @@ namespace Download_Time_Calc
         }
     }
 }
+
+
+//letak timeleft
+//letak remaining file
+// styling control triggers https://www.youtube.com/watch?v=V2yheOom6KM 4:56
