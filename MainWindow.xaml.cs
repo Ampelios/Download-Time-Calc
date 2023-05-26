@@ -204,7 +204,7 @@ namespace Download_Time_Calc
                 double calc = (float.Parse(TBoxSize.Text) * SizeUnit) / (float.Parse(TBoxSpeed.Text) * SpdUnit);
                 if(!Double.IsNaN(calc) && !Double.IsInfinity(calc) && calc!=0)
                 {
-                    string[] Result = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff").Split(':');
+                    string[] Result = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:fff").Split(':');
                     //TBoxDeb.Text = TimeSpan.FromSeconds(calc).ToString(@"dd\:hh\:mm\:ss\:ffff") + "  " + calc.ToString() + SpdUnit;
                     TBxDay.Text = Result[0];
                     TBxHr.Text = Result[1];
