@@ -10,10 +10,12 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         AllowsTransparency="True"
+        Background="Transparent"
         >
 
-
-    <StackPanel Background="{DynamicResource cs_Background}" >
+    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="12" Background="{StaticResource cs_Background}">
+        
+        <StackPanel Background="Transparent" >
                 
         <StackPanel.ContextMenu>
             <ContextMenu>
@@ -32,17 +34,17 @@
             </ContextMenu>
         </StackPanel.ContextMenu>
         
-        <DockPanel Height="26" >
+        <DockPanel Height="28" Background="Transparent">
+                <Border Background="{StaticResource cs_Menu}" CornerRadius="10,10,0,0">
+                               <Grid Background="Transparent" MouseDown="DockPanel_MouseDown">
 
-            <Grid Background="{StaticResource cs_Menu}" MouseDown="DockPanel_MouseDown">
-
-                <Menu ItemContainerStyle="{DynamicResource MenuItemContainerStyle1}" Margin="3,0,0,0" 
-                      Background="{StaticResource cs_Menu}" 
-                      DockPanel.Dock="Top" 
+                <Menu ItemContainerStyle="{DynamicResource MenuItemContainerStyle1}" Margin="0,0,0,0" 
+                      Background="Transparent" 
+                      DockPanel.Dock="Top"
                       HorizontalAlignment="Left" 
-                      Height="20">
+                      Height="28">
 
-                    <MenuItem Header="_File">
+                    <MenuItem Height="28" Header="_File">
 
                         <MenuItem Header="Clear" Click="ButtClear_Click"/>
 
@@ -86,7 +88,9 @@
 
                 </StackPanel>
 
-            </Grid>
+            </Grid> 
+                </Border>
+
             
 
 
@@ -331,4 +335,7 @@
             </StackPanel>    
          </StackPanel>  
     </StackPanel>
+    
+    </Border>
+    
 </Window>
