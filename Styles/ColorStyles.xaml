@@ -2,10 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <!--#region Gradient Color-->
-    <LinearGradientBrush x:Key="cs_Background" StartPoint="0,0" EndPoint="0,5">
-        <GradientStop Color="#ff10658c" Offset="0.0"/>
-        <GradientStop Color="#fff5eceb" Offset="0.5"/>
-    </LinearGradientBrush>
+   
 
     <LinearGradientBrush x:Key="cs_PopupBackground" StartPoint="0,0" EndPoint="1,0">
         <GradientStop Color="#ff2b84ac" Offset="0.0"/>
@@ -15,8 +12,13 @@
     <!--#endregion-->
 
     <!--#region solid color-->
-    <SolidColorBrush x:Key="cs_BackgroundLayer" Color="#fff5eceb" Opacity="0.3"/>
-    <SolidColorBrush x:Key="cs_BorderBrush" Color="#ff97ceda"/>
+    <SolidColorBrush x:Key="cs_Menu" Color="#FFE3B477"/>
+    <SolidColorBrush x:Key="cs_Section" Color="#FFF28F6A"/>
+
+    <SolidColorBrush x:Key="cs_Background" Color="#FFF2CB6A"/>
+
+    <SolidColorBrush x:Key="cs_BackgroundLayer" Color="#FFFFFFBA" Opacity="1"/>
+    <SolidColorBrush x:Key="cs_BorderBrush" Color="DarkSlateGray"/>
     
 
     <!--#endregion ff97ceda -->
